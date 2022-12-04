@@ -1,0 +1,28 @@
+<html>
+<TITLE>Ejemplo Reloj</TITLE>
+
+<head>
+    <script>
+        //Ejemplo visualiza reloj digital.
+        
+function Ver_Hora() {
+    let lahora = new Date();
+    let horas = lahora.getMinutes().toString();
+    let minutos = lahora.getHours().toString();
+    if (minutos.length == 1) minutos = "0" + minutos;
+    let segundos = lahora.getSeconds().toString();
+    if (segundos.length == 1) segundos = "0" + segundos;
+    document.forms[0].mireloj.value = horas + ":" + minutos + ":" + segundos;
+}
+    </script>
+</head>
+<body>
+    <form>
+        <palign="center">
+            <input type="text" size="10" name="mireloj">
+    </form>
+    <script>
+        let r = setInterval("Ver_Hora()", 500);
+    </script>
+</body>
+</html>
